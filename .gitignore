@@ -1,5 +1,5 @@
 /server/server.sh
-/server/__pycache__
+/server/__pycache__/
 /server/secrets.json
 /server/apis/__pycache__/*
 /server/core/__pycache__/*
