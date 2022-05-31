@@ -1,15 +1,14 @@
-from typing import Union
-
+# main.py
+import os
+from typing import Optional
 from fastapi import FastAPI
+from routes.test import router as test_router
 
-app = FastAPI()
+app = FastAPI() # FastAPI 모듈
+app.include_router(test_router) # 다른 route파일들을 불러와 포함시킴
 
-
-@app.get("/")
-def read_root():
-    return {"value": "test"}
-
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+@app.get("/") # Route Path
+def index():
+    return {
+        "Python": "Framework",
+    }
